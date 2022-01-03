@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@mixin button($wid:100px, $bg:gray){
+    width: $wid;height: 34px; border-radius: 20px;
+    background: $bg; font-size: 12px; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+}

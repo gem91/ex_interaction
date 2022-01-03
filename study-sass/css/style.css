@@ -1,0 +1,53 @@
+/* sass --watch scss/style.scss css/style.css */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #eee;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  width: 100%;
+  border: 2px solid #bbb;
+  perspective: 600px;
+}
+.wrap .item {
+  padding: 30px;
+  width: 300px;
+  background-color: #fff;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.wrap .item h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-family: "arial";
+  color: #333;
+}
+.wrap .item p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.3;
+  font-family: "arial";
+  color: #333;
+}
+.wrap .item a {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
