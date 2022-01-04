@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
+
+main{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, violet, cornflowerblue);
+
+    .swiper-wrapper{
+       width: 100%;
+       height: 100%;
+       
+       .swiper-slide{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 100px;
+          background: rgba(255,255,255,.2);
+       }
+    }
+
+}
+
+
+
+

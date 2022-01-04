@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</head>
+<body>
+   <main>
+      <section class="swiper-wrapper">
+         <aricle class="swiper-slide">1</aricle>
+         <aricle class="swiper-slide">2</aricle>
+         <aricle class="swiper-slide">3</aricle>
+         <aricle class="swiper-slide">4</aricle>
+         <aricle class="swiper-slide">5</aricle>
+      </section>
+   </main>
+
+   <script>
+      const swiper = new Swiper('main', {
+         speed: 500, // 스와이프 넘어가는 속도 제어
+         loop: true, // 스와이프 마지막에서 다시 첫번째로 순환시키기
+         direction: "horizontal",  // 넘기는 방향 가로 'horizontal' 세로 'vertical'
+         grabCursor: true, // 커서 모양 변경시키기
+         slidesPerView: 3, //기본값 'auto' - 1개만 보임 / 숫자 - 슬라이드 갯수 단위로 패널보임
+         // 넓이값 주고싶을때 CSS에 width 값 주고나서 'auto' 주면 넓이 맞게 맞춰짐
+         spaceBetween: 20, // 슬라이드 사이 간격(px)
+         centeredSlides: true, //첫번째 패널이 항상 가운데로 시작
+      });
+   </script>
+</body>
+</html>
