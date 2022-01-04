@@ -13,12 +13,57 @@
 <body>
    <main>
       <section class="swiper-wrapper">
-         <aricle class="swiper-slide">1</aricle>
-         <aricle class="swiper-slide">2</aricle>
-         <aricle class="swiper-slide">3</aricle>
-         <aricle class="swiper-slide">4</aricle>
-         <aricle class="swiper-slide">5</aricle>
+         <aricle class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="img/pic1.png" alt="picture1">
+                  <h2>Lorem ipsum dolor sit amet.</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores.</p>
+               </div>
+            </div>
+         </aricle>
+         <aricle class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="img/pic2.png" alt="picture2">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores.</p>
+               </div>
+            </div>
+         </aricle>
+         <aricle class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="img/pic3.png" alt="picture3">
+                  <h2>Lorem ipsum dolor sit amet.</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores.</p>
+               </div>
+            </div>
+         </aricle>
+         <aricle class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="img/pic4.png" alt="picture4">
+                  <h2>Lorem ipsum dolor, sit adipisicing.</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores.</p>
+               </div>
+            </div>
+         </aricle>
+         <aricle class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="img/pic5.png" alt="picture5">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, asperiores.</p>
+               </div>
+            </div>
+         </aricle>
       </section>
+
+      <nav class="swiper-pagination"></nav>
+
+      <nav class="swiper-button-prev"></nav>
+      <nav class="swiper-button-next"></nav>
    </main>
 
    <script>
@@ -27,10 +72,31 @@
          loop: true, // 스와이프 마지막에서 다시 첫번째로 순환시키기
          direction: "horizontal",  // 넘기는 방향 가로 'horizontal' 세로 'vertical'
          grabCursor: true, // 커서 모양 변경시키기
-         slidesPerView: 3, //기본값 'auto' - 1개만 보임 / 숫자 - 슬라이드 갯수 단위로 패널보임
+         slidesPerView: 'auto', //기본값 'auto' - 1개만 보임 / 숫자 - 슬라이드 갯수 단위로 패널보임
          // 넓이값 주고싶을때 CSS에 width 값 주고나서 'auto' 주면 넓이 맞게 맞춰짐
          spaceBetween: 20, // 슬라이드 사이 간격(px)
          centeredSlides: true, //첫번째 패널이 항상 가운데로 시작
+
+         pagination: {
+            el: ".swiper-pagination", // 페이지네이션 버튼 추가
+            clickable: true,   //클릭 여부설정
+         },
+         navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+         },
+
+         //3D효과로 효과넣기
+         effect: 'coverflow',
+         coverflowEffect:{
+            rotate: 60,
+            stretch: -80,    // 사이 간격 정수면 붙여지고 - 이면 멀어진다.
+            depth: 400, // 입체적인 원근감 표현
+            slideShadows: false, // 옆 슬라이드 그림자 옵션
+
+            
+         }
+         
       });
    </script>
 </body>
