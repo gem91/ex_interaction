@@ -13,6 +13,16 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  z-index: 2;
+  font: normal 24px/1 "orbitron";
+  color: #fff;
+  letter-spacing: 1px;
+}
+
 main {
   overflow: hidden;
   position: relative;
@@ -33,6 +43,7 @@ main .swiper-wrapper .swiper-slide {
   border: 1px solid #fff;
 }
 main .swiper-wrapper .swiper-slide .inner {
+  position: relative;
   padding: 30px;
   width: 100%;
   height: 100%;
@@ -40,8 +51,34 @@ main .swiper-wrapper .swiper-slide .inner {
   opacity: 0.3;
   transition: 0.5s;
 }
+main .swiper-wrapper .swiper-slide .inner:before, main .swiper-wrapper .swiper-slide .inner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  1% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
 main .swiper-wrapper .swiper-slide .inner .con {
   position: relative;
+  z-index: 2;
 }
 main .swiper-wrapper .swiper-slide .inner .con img {
   width: 100%;
@@ -70,8 +107,62 @@ main .swiper-wrapper .swiper-slide-active .inner {
   opacity: 1;
   box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
 }
+main .swiper-wrapper .swiper-slide-active .inner:before {
+  animation: ani 1s ease 0s 1;
+}
+main .swiper-wrapper .swiper-slide-active .inner:after {
+  animation: ani 1s ease 0.3s 1;
+}
 main .swiper-wrapper .swiper-slide-prev .inner, main .swiper-wrapper .swiper-slide-next .inner {
   opacity: 0.6;
+}
+main .swiper-pagination-fraction {
+  top: 70px;
+  bottom: auto;
+  left: auto;
+  right: 100px;
+  width: auto;
+  font-family: "orbitron";
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+main .swiper-pagination-fraction span {
+  opacity: 0.6;
+}
+main .swiper-pagination-fraction span.swiper-pagination-current {
+  font-size: 25px;
+  opacity: 1;
+}
+main .navi {
+  top: auto;
+  left: auto;
+  bottom: 8vh;
+  transform: scale(0.7);
+  filter: saturate(0) brightness(4);
+  transition: 0.5s;
+  opacity: 0.7;
+}
+main .navi:hover {
+  transform: scale(0.9);
+  opacity: 1;
+}
+main .navi.swiper-button-prev {
+  right: 150px;
+}
+main .navi.swiper-button-next {
+  right: 100px;
+}
+
+footer {
+  position: absolute;
+  left: 50%;
+  bottom: 5vh;
+  font: 12px/1 "arial";
+  color: #fff;
+  opacity: 0.5;
+  letter-spacing: 2px;
+  transform: translateX(-50%);
 }
 
 /*# sourceMappingURL=style.css.map */

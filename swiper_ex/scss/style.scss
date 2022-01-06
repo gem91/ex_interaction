@@ -2,6 +2,17 @@
 @import "reset";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
 
+
+h1{
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    z-index: 2;
+    font: normal 24px/1 "orbitron";
+    color: #fff;
+    letter-spacing: 1px;
+}
+
 main{
     overflow: hidden;
     position: relative;
@@ -22,6 +33,7 @@ main{
             border: 1px solid #fff;
 
             .inner{
+                position: relative;
                 padding: 30px;
                 width: 100%;
                 height: 100%;
@@ -29,8 +41,35 @@ main{
                 opacity: .3;
                 transition: .5s;
 
+                &:before, &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    opacity: 0;
+                }
+                
+                @keyframes ani {
+                    0%{
+                        opacity: 0;
+                        transform: scale(1);
+                    }
+                    1%{
+                        opacity: .5;
+                    }
+                    100%{
+                        opacity: 0;
+                        transform: scale(1.2);
+                    }
+                }
                 .con{
                     position: relative;
+                    z-index: 2;
 
                     img{
                         width: 100%;
@@ -59,10 +98,18 @@ main{
                 }
             }
        }
+
        .swiper-slide-active{
            .inner{
                opacity: 1;
                box-shadow: 0px 0px 30px rgba(255,255,255,.8) ;
+
+               &:before{
+                   animation: ani 1s ease 0s 1; // 1초동안 delay없이 1번만 동작
+               }
+               &:after{
+                animation: ani 1s ease .3s 1; // 1초동안 delay없이 1번만 동작
+                }
             }
        }
        .swiper-slide-prev, .swiper-slide-next{
@@ -71,9 +118,60 @@ main{
             }
         }
     }
+    .swiper-pagination-fraction{
+        top: 70px;
+        bottom: auto;
+        left: auto;
+        right: 100px;
+        width: auto; // 초기화
+        font-family: "orbitron";
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: 1px;
+        
+        span{
+            opacity: .6;
+            
+            &.swiper-pagination-current{
+                font-size: 25px;
+                opacity: 1;
+            }
+        }
+       
+    }
 
+    .navi{
+        top: auto;
+        left: auto;
+        bottom: 8vh;
+        transform: scale(.7);
+        filter: saturate(0) brightness(4);
+        transition: .5s;
+        opacity: .7;
+
+        &:hover{
+            transform: scale(.9);
+            opacity: 1;
+        }
+        &.swiper-button-prev{
+            right: 150px;
+        }
+        &.swiper-button-next{
+            right: 100px;
+        }
+    }
 }
 
+footer{
+    position: absolute;
+    left: 50%;
+    bottom: 5vh;
+    font: 12px/1 "arial";
+    color: #fff;
+    opacity: .5;
+    letter-spacing: 2px;
+    transform: translateX(-50%);
+}
 
 
 

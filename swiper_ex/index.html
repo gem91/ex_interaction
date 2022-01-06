@@ -11,6 +11,7 @@
    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
+   <h1>CODELAB</h1>
    <main>
       <section class="swiper-wrapper">
          <aricle class="swiper-slide">
@@ -62,9 +63,12 @@
 
       <nav class="swiper-pagination"></nav>
 
-      <nav class="swiper-button-prev"></nav>
-      <nav class="swiper-button-next"></nav>
+      <nav class="swiper-button-prev navi"></nav>
+      <nav class="swiper-button-next navi"></nav>
    </main>
+   <footer>
+      2022 CODELAB &copy; ALL RIGHTS RESERVED.
+   </footer>
 
    <script>
       const swiper = new Swiper('main', {
@@ -79,7 +83,8 @@
 
          pagination: {
             el: ".swiper-pagination", // 페이지네이션 버튼 추가
-            clickable: true,   //클릭 여부설정
+            // clickable: true,   //클릭 여부설정
+            type: "fraction", // 페이지 순번 확인 가능
          },
          navigation: {
             prevEl: '.swiper-button-prev',
