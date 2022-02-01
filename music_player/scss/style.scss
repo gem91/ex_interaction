@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import "reset";
+
+figure{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(25deg, violet, pink);
+    h1{
+        position: absolute;
+        top: 7vh;
+        left: 4vw;
+        font-size: 0;
+        strong{
+            display: block;
+            font: bold 36px/1.4 "arial";
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        span{
+            display: block;
+            font: 12px/1 "arial";
+            color: #fff;
+            opacity: .8;
+            letter-spacing: 1px;
+        }
+    }
+
+    .menu{
+        position: absolute;
+        top: 8vh;
+        right: 4vw;
+        font-size: 24px;
+        color: #fff;
+    }
+   
+    @import "panel";
+    @import "btns";
+
+    .copy{
+        position: absolute;
+        bottom: 7vh;
+        left: 50%;
+        font: 2px/1 "arial";
+        color: #fff;
+        letter-spacing: 2px;
+        opacity: .8;
+        transform: translateX(-50%);
+    }
+}
