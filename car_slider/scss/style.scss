@@ -1,0 +1,76 @@
+@charset 'UTF-8';
+@import 'reset';
+
+#slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .panel {
+        width: 500%; 
+        height: 100%;
+
+        li {
+            width: 20%;
+            height: 100%;
+            float: left;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;   // 위치의 기준점이 브라우저에 고정.
+            @for $i from 1 through 5{
+                &:nth-of-type(#{$i}){
+                    background-image: url(../img/pic#{$i}.jpg);
+                }
+            }  
+        }
+    }
+
+    .btns {
+        position: absolute;
+        bottom: 5vh;
+        left: 5%;
+        width: 90%;
+
+        li {
+            float: left;
+            width: 20%;          
+            padding: 20px;
+            perspective: 1000px;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 40px;
+                border: 1px solid #222;
+                font: 14px/40px 'arial';
+                color: #222;
+                text-align: center;
+                border-radius: 20px;
+                transition: 1s;
+            }
+
+            &.on {
+                a {
+                    background: #222; 
+                    color: #fff;
+                    transform: rotateY(360deg);
+                }
+            }
+        }
+    }
+
+    #ring {
+        position: absolute;
+        top: 50%;
+        right: -160px;
+        margin-top: -160px;
+        transition: 1s;
+        @for $i from 0 through 4{
+            &.rot#{$i} {
+                transform: rotate(#{$i*60}deg);
+            } 
+        }
+    }
+}

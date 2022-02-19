@@ -1,0 +1,17 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{text-decoration: none;}
+
+body{
+    width: 1600px;
+    height: 3000px;
+}
+
+button{padding: 10px 20px; margin: 50px; }
+section{
+    /* margin: 0 auto; */
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid #ddd;
+}
+#box{ position: absolute; left: 10%; width: 100px; height: 100px; background: aqua; opacity: 0.2; }
